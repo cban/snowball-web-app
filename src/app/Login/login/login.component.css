@@ -87,12 +87,39 @@
 .form-login .form-control:focus {
     border-color: rgb(104, 145, 162);
     outline: 0;
+    margin-bottom: 20px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+.form-control{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+   
 }
 
 .btn.btn-login {
     background-color:#007fba;
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+
+
+.btn.btn-account {
+    background-color:#598604;
     /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
     padding: 0px;
     font-weight: 700;
@@ -113,11 +140,10 @@
 .btn.btn-login:focus {
     background-color:#014c6e;
 }
-
 .forgot-password {
     color:#007fba;
+    margin-bottom: 20px;
 }
-
 .forgot-password:hover,
 .forgot-password:active,
 .forgot-password:focus{
@@ -134,9 +160,13 @@
 }
 .title{
     position:absolute;
-    text-align:center; 
+    text-align:center; font-size: 35px;
+    font-family: -apple-system, Roboto,BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
     text-transform:uppercase;
     color:rgb(13, 44, 58);
-    
+   width: 100%; 
     margin-top: 50px;
+    background-color: white;
+    margin-bottom: 50px;
 }
