@@ -12,29 +12,40 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+ 
+ myFormGroup:FormGroup;
+  email: FormControl;
+  password:FormControl
 
-
- myGroup = new FormGroup({
-  email: new FormControl(),
-  password:new FormControl()
-  
-});
-em:string
-pass:string
-  user = {
-  email: '',
-   password: ''
- };
+//  myGroup = new FormGroup({
+//   email: new FormControl('',[Validators.required,Validators.email]
+// ]),
+//   password:new FormControl('',[Validators.required,Validators.minLength(6)]),
+// })
 
   constructor(private af: AngularFireAuth,private router: Router,private authService:AuthService ) { }
 
   ngOnInit() {
+    this.createFormControls()
+    this.createForm()
     
   }
 
-  login()
-  {
-    this.authService.loginWithEmailAndPassword(this.myGroup.controls.email.value,this.myGroup.controls.password.value).then( (res) => {
+  createFormControls() { 
+    this.email = new FormControl('', Validators.required);
+    this.password = new FormControl('', [Validators.required,Validators.minLength(6)]);
+  }
+createForm()
+{
+  this.myFormGroup = new FormGroup({
+    email: this.email,
+    password:this.password
+  });
+}
+
+ 
+  login()  {
+     this.authService.loginWithEmailAndPassword(this.email.value,this.password.value).then( (res) => {
       console.log(res);
       this.router.navigate(['dashboard'])
     })

@@ -13,12 +13,24 @@ import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule,routingComponents } from './/app-routing.module';
 
 
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './signup/signup/signup.component'
+import { AuthGuard } from './auth/auth.guard';
+import { LoginComponent } from './Login/login/login.component';
+import { UserComponent } from './users/user/user.component';
+import { UsersComponent } from './users/users.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    LoginComponent,
+    UserComponent,
+    UsersComponent,
+    UserListComponent,
+    routingComponents,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +43,7 @@ import { ReactiveFormsModule } from '@angular/forms'
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,AuthGuard,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private user: Observable<firebase.User>
+   user: Observable<firebase.User>
   constructor(private _fireBaseAuth: AngularFireAuth, private router: Router) {
     this.user = _fireBaseAuth.authState
 
@@ -23,7 +23,7 @@ export class AuthService {
 
   logout() {
     this._fireBaseAuth.auth.signOut()
-    this.router.navigate(['login'])
+   
   }
 
 }
