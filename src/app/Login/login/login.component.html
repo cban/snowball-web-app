@@ -2,7 +2,7 @@
 <img src="assets/celebration.jpg" alt="" class="bg-img">
 
 <div class="row justify-content-center">
-        <h2 class="title">SnowBall Events Management System</h2>
+    
       </div>
       <div class="sect"><h1>SnowBall Events Management</h1></div>
   <div class="card card-container">
@@ -12,8 +12,10 @@
           <span id="reauth-email" class="reauth-email"></span>
           <div [formGroup]="myFormGroup">
           <input type="email" class="form-control" formControlName="email" name="email"  placeholder="Email address"  required autofocus >
-          <input type="password" class="form-control" formControlName="password" name="password"placeholder="Password"  required autofocus >
-          </div>
+          <label class="error">{{errorMessage}}</label>
+          <label class="success">{{successMessage}}</label><input type="password" class="form-control" formControlName="password" name="password"placeholder="Password"  required autofocus >
+         
+        </div>
           <div id="remember" class="checkbox">
               <label>
                   <input type="checkbox" value="remember-me" > Keep me logged in

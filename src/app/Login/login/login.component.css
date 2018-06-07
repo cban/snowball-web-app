@@ -117,7 +117,9 @@
 }
 
 
-
+.error{
+    color: red;
+  }
 .btn.btn-account {
     background-color:#598604;
     /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/

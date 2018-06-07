@@ -17,24 +17,37 @@ export class UserService {
     this.userList = this.firebase.list('users');
     return this.userList;
   }
+  randomPassword() {
+    length = 9
+     var chars = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
+     var password = "";
+     for (var x = 0; x < 9; x++) {
+         var i = Math.floor(Math.random() * chars.length);
+         password += chars.charAt(i);
+     }
+     return password;
+ }
 
   insertUser(user: User) {
 
     this.userList.push({
       email: user.email,
-      name: user.name
+      name: user.name,
+      password :user.password = this.randomPassword()
     });
   }
 
   updateUser(user: User) {
-    this.userList.update(user.key,
+    this.userList.update(user.$key,
       {
         email: user.email,
         name: user.name
       })
   }
 
-  deleteUser(key:string){
-    this.userList.remove(key)
+  deleteUser($key:string){
+    this.userList.remove($key)
   }
 }
+
+

@@ -1,0 +1,36 @@
+.mat-raised-button.mat-primary {
+    background-color: #016fb3;
+}
+
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+.users{
+    background-color: aliceblue;
+}
+
+.mat-card-actions .mat-raised-button:first-child {
+    margin-left: 10;
+    margin-right: 0;
+}
+
+td{
+    margin-left:20px;
+    padding:20px;
+}
+.mat-card-actions {
+     margin-left: 0px; 
+    margin-right: -16px;
+    padding: 8px 0;
+}
+
+
+.mat-card-actions[_ngcontent-c3] {
+    margin-left: 12px;
+    margin-right: -16px;
+    padding: 8px 0;
+    width: 100%;
+}

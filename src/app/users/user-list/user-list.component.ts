@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
 import { User } from '../shared/user.model';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-user-list',
@@ -9,7 +11,7 @@ import { User } from '../shared/user.model';
 })
 export class UserListComponent implements OnInit {
 userList :User[];
-  constructor(private userService : UserService) { }
+  constructor(private userService : UserService, private authService:AuthService,private toast:ToastrService) { }
 
   ngOnInit() {
     var x = this.userService.getData();
@@ -30,8 +32,15 @@ userList :User[];
   onDelete(key: string) {
     if (confirm('Are you sure to delete this record ?') == true) {
       this.userService.deleteUser(key);
-      //this.tostr.warning("Deleted Successfully", "Employee register");
+      this.toast.warning("Deleted Successfully");
     }
+
+  }
+  
+  resetPassword(email: string)
+  {
+    this.authService.sendPasswordResetEmail(email)
+    this.toast.success("Password successfully resetted")
   }
 
 

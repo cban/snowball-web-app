@@ -1,16 +1,17 @@
 
-<h6 class="text-center">Users </h6><br/>
+<h5 class="text-center">List Of Users </h5><br/>
 <table class="table table-sm table-hover">
-  <tr *ngFor="let user of userList">
+<tr *ngFor="let user of userList">
+    <mat-card>
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
-      <td>
-        <a class="btn" (click)="onEdit(user)">
-          <i class="fa fa-pencil-square-o"></i>
-        </a>
-        <a class="btn" (click)="onDelete(user.key)">
-          <i class="fa fa-trash-o"></i>
-        </a>
-      </td>
+      <td align="right">
+      <mat-card-actions class="right">
+         <button  mat-raised-button (click)="onEdit(user)" >Edit</button>   
+         <button  mat-raised-button color="warn" (click)="onDelete(user.$key)" >Delete</button>  
+         <button  mat-raised-button (click)="resetPassword(user.email)" >Reset Password</button>          
+      </mat-card-actions></td> 
+    </mat-card>
   </tr>
+
 </table>

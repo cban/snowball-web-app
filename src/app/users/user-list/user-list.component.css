@@ -1,0 +1,34 @@
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+     padding: 6px;
+    margin:10px;
+    border-radius: 2px;
+}
+.mat-card-actions .mat-button:first-child, .mat-card-actions .mat-raised-button:first-child {
+    margin-left: 12px;
+    margin-right: 0;
+}
+
+.mat-card-actions, .mat-card-content, .mat-card-subtitle, .mat-card-title {
+    display: block;
+    right: 0px;
+    position: absolute;
+    margin-bottom: 16px;
+}
+.mat-card-actions {
+    margin-left: -16px;
+    margin-right: 0px; 
+    padding: 0;
+}
+.mat-card>.mat-card-actions:last-child {
+     margin-bottom: 0px; 
+    padding-bottom: 0;
+}
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+     border-top: 0px solid #dee2e6; 
+}

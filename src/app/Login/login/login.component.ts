@@ -15,13 +15,9 @@ export class LoginComponent implements OnInit {
  
  myFormGroup:FormGroup;
   email: FormControl;
-  password:FormControl
-
-//  myGroup = new FormGroup({
-//   email: new FormControl('',[Validators.required,Validators.email]
-// ]),
-//   password:new FormControl('',[Validators.required,Validators.minLength(6)]),
-// })
+  password:FormControl;
+  errorMessage: string = '';
+  successMessage: string = '';
 
   constructor(private af: AngularFireAuth,private router: Router,private authService:AuthService ) { }
 
@@ -45,12 +41,15 @@ createForm()
 
  
   login()  {
+    const scope = this;
+    console.log(this.email.value + " CLEOOOOOOOOOOOOOOOO:" +this.password.value);
      this.authService.loginWithEmailAndPassword(this.email.value,this.password.value).then( (res) => {
       console.log(res);
-      this.router.navigate(['dashboard'])
+      scope.router.navigate(['dashboard'])
     })
     .catch( (err) => {
       console.log('auth error',err);  
+      scope.errorMessage = err.errorMessage;
     })
     
   }

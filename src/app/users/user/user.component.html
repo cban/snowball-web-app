@@ -1,24 +1,35 @@
-<p>
-  user works!
-</p>
 
+  
+  <div class="add">
   <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-      <input type="hidden" name="key" #key="ngModel" [(ngModel)]="userService.selectedUser.key">
-    <div class="form-group">
-      <label>Name</label>
-      <input class="form-control" name="name" #name="ngModel" [(ngModel)]="userService.selectedUser.name" placeholder="Full Name" required>
-    </div>
-    <div class="form-group">
-      <label>Email Address</label>
-      <input class="form-control" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Email" requireds>
-    </div>
-
-    <div class="form-group">
-      <button class="btn btn-default" type="submit">
-        <i class="fa fa-floppy-o"></i>
-         Submit</button>
-      <button class="btn btn-default" type="button" (click)="resetForm(userForm)">
-        <i class="fa fa-repeat"></i>
-         Reset</button>
-    </div>
+      <input  type="hidden"  name="$key" #$key="ngModel" [(ngModel)]="userService.selectedUser.$key">
+      <table class="example-full-width" cellspacing="0">
+    <div class="form-group"> 
+        <tr>
+            <td>
+    <mat-form-field>
+      <input  matInput placeholder="Full Name" name="name" #name="ngModel" [(ngModel)]="userService.selectedUser.name" required>
+    </mat-form-field></td>
+   <td>
+    <mat-form-field>
+        <input matInput placeholder="Email"  type="email" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Email" required>
+      </mat-form-field>
+    </td>
+    <td hidden>
+        <mat-form-field>
+            <input matInput placeholder="Password"  type="password" name="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password"  required>
+          </mat-form-field>
+        </td>
+         
+    <td>
+      <div *ngIf="!email.valid && email.touched">
+          Email is required!
+        </div>
+  <mat-card-actions >
+      <button  mat-raised-button color="primary" type="submit" >
+         Add User</button>
+        </mat-card-actions> </td>
+        </tr> </div>
+      </table>
   </form>
+</div>

@@ -81,7 +81,12 @@ body {
       position: sticky;
     }
   }
-  
+  .btn-outline-secondary {
+    color: #ffffff ;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ffffff;
+}
   .sidebar .nav-link {
     font-weight: 500;
     color: #333;
@@ -150,3 +155,7 @@ body {
   .border-top { border-top: 1px solid #e5e5e5; }
   .border-bottom { border-bottom: 1px solid #e5e5e5; }
   
+
+  .row {
+  background-color: #f8f9fa!important;
+  }
